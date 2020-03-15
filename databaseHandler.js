@@ -1,5 +1,6 @@
 
 exports.createFromArray = (_data, _path) => {
+	
 	if (!Array.isArray(_data)) {
 		return {
 			frArray: false,
