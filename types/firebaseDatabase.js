@@ -1,7 +1,7 @@
 
 const admin = require("firebase-admin");
 
-const serviceAccount = require(`../databaseAuthentication.json`);
+const serviceAccount = require(`../../config/keys/databaseAuthentication.json`);
 const databaseHandler = require("../databaseHandler");
 
 admin.initializeApp({
