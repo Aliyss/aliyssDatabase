@@ -35,6 +35,7 @@ exports.configCheck = async (db_init, _configFolder, _configId='instances') => {
 		case "json":
 		default:
 			await this.databaseFull(new_db_init).addPath(new_db_init.folder)
+			await this.databaseFull(new_db_init).addPath(new_db_init.folder + "clients")
 			break;
 	}
 	
