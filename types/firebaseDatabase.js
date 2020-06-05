@@ -4,10 +4,15 @@ const admin = require("firebase-admin");
 const serviceAccount = require(`../../config/keys/databaseAuthentication.json`);
 const databaseHandler = require("../databaseHandler");
 
-admin.initializeApp({
-	credential: admin.credential.cert(serviceAccount),
-	databaseURL: `https://${serviceAccount.project_id}.firebaseio.com`
-});
+try {
+	admin.initializeApp({
+		credential: admin.credential.cert(serviceAccount),
+		databaseURL: `https://${serviceAccount.project_id}.firebaseio.com`
+	});
+} catch (e) {
+	console.log(e)
+}
+
 
 const database = admin.firestore();
 
